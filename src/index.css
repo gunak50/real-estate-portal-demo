@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; }
+
+.dark body { @apply bg-slate-950 text-slate-100; }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(90deg, #e5e7eb 0%, #f3f4f6 40%, #e5e7eb 80%);
+  background-size: 1000px 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+.dark .skeleton {
+  background: linear-gradient(90deg, #1e293b 0%, #334155 40%, #1e293b 80%);
+  background-size: 1000px 100%;
+}
+
+/* Leaflet height fix */
+.leaflet-container { height: 100%; width: 100%; z-index: 0; }
+
+/* Hide scrollbars on horizontal swipers */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Lazy image fade */
+img.lazy-fade { opacity: 0; transition: opacity 0.45s ease; }
+img.lazy-fade.loaded { opacity: 1; }
+
+/* Dark mode form fix */
+.dark input, .dark select, .dark textarea {
+  @apply bg-slate-900 border-slate-700 text-slate-100 placeholder-slate-500;
+}
