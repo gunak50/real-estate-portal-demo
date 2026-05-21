@@ -358,11 +358,11 @@ function NumberInput({ label, value, onChange, step = 1 }: { label: string; valu
   return (
     <div>
       <label className="text-xs font-semibold uppercase text-slate-500">{label}</label>
-      <div className="mt-1 flex overflow-hidden rounded-lg border border-slate-300">
+      <div className="mt-1 flex items-stretch overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
         <button
           type="button"
           onClick={() => onChange(Math.max(0, value - step))}
-          className="grid w-10 place-items-center bg-slate-50 dark:bg-slate-800"
+          className="grid w-10 shrink-0 place-items-center bg-slate-50 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
         >
           −
         </button>
@@ -370,12 +370,12 @@ function NumberInput({ label, value, onChange, step = 1 }: { label: string; valu
           type="number"
           value={value}
           onChange={(e) => onChange(Number(e.target.value) || 0)}
-          className="flex-1 bg-transparent px-3 py-2 text-center"
+          className="min-w-0 flex-1 border-0 bg-transparent px-3 py-2 text-center focus:outline-none focus:ring-0 dark:bg-transparent"
         />
         <button
           type="button"
           onClick={() => onChange(value + step)}
-          className="grid w-10 place-items-center bg-slate-50 dark:bg-slate-800"
+          className="grid w-10 shrink-0 place-items-center bg-slate-50 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
         >
           +
         </button>

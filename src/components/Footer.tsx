@@ -49,13 +49,19 @@ export default function Footer() {
           <p className="mt-3 text-sm text-slate-500">Get fresh listings & city insights, weekly.</p>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="mt-3 flex overflow-hidden rounded-full border border-slate-200 dark:border-slate-700"
+            className="mt-3 flex items-stretch overflow-hidden rounded-full border border-slate-200 dark:border-slate-700"
           >
-            <span className="grid w-10 place-items-center bg-slate-100 text-slate-500 dark:bg-slate-800">
+            <span className="grid w-10 shrink-0 place-items-center bg-slate-100 text-slate-500 dark:bg-slate-800">
               <Mail className="h-4 w-4" />
             </span>
-            <input type="email" placeholder="you@email.com" className="flex-1 bg-white px-3 py-2 text-sm focus:outline-none dark:bg-slate-900" />
-            <button className="bg-brand-600 px-4 text-sm font-semibold text-white">Join</button>
+            <input
+              type="email"
+              placeholder="you@email.com"
+              className="min-w-0 flex-1 border-0 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-0 dark:bg-slate-900"
+            />
+            <button className="shrink-0 bg-brand-600 px-5 py-2 text-sm font-semibold text-white hover:bg-brand-700">
+              Join
+            </button>
           </form>
         </div>
       </div>
